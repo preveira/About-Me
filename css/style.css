@@ -4,4 +4,23 @@ body {
 h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
+    margin: 0;
+    padding-bottom: 5px;
+}
+p {
+    margin: 0;
+}
+.name-title {
+    display: flex;
+}
+.text-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    align-items: start;
+    align-self: center;
+}
+footer {
+    background-color: black;
+    color: white;
 }

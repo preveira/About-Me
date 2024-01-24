@@ -6,14 +6,16 @@ function buttonGame() {
     let answerString1 = "Hey " + user +"! let's begin a game of how good you know me.";
 
     alert(answerString1);
+    
+    let userConfirmed;
 
-    let userConfirmed = prompt("Are you ready to play? yes/no");
-
-    let userConfirmedAnswer = userConfirmed.toLocaleLowerCase();
-
-
-    if (userConfirmed) {
-        let confirmation = "Alright " + user +", here we GO!!!";
+    do {
+        userConfirmed = prompt("Are you ready to play? Please enter 'yes' or 'no'");
+        userConfirmed = userConfirmed ? userConfirmed.toLowerCase() : ""; // Convert to lowercase or set to an empty string if null
+    } while (userConfirmed !== "yes" && userConfirmed !== "no");
+    
+    if (userConfirmed === "yes") {
+        let confirmation = "Alright " + user + ", here we GO!!!";
         alert(confirmation);
     } else {
         alert("Okay, maybe next time.");

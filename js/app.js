@@ -1,94 +1,82 @@
 function buttonGame() {
     let userName = "Thank you for browsing my website! What's your Name?";
-
     let user = prompt(userName);
-
-    let answerString1 = "Hey " + user +"! let's begin a game of how good you know me.";
-
+    let answerString1 = "Hey " + user + "! Let's begin a game of how well you know me.";
     alert(answerString1);
-    
-    let userConfirmed;
 
+    let userConfirmed;
     do {
         userConfirmed = prompt("Are you ready to play? Please enter 'yes' or 'no'");
-        userConfirmed = userConfirmed ? userConfirmed.toLowerCase() : ""; // Convert to lowercase or set to an empty string if null
+        userConfirmed = userConfirmed ? userConfirmed.toLowerCase() : "";
     } while (userConfirmed !== "yes" && userConfirmed !== "no");
-    
-    if (userConfirmed === "yes") {
-        let confirmation = "Alright " + user + ", here we GO!!!";
-        alert(confirmation);
-    } else {
+
+    if (userConfirmed !== "yes") {
         alert("Okay, maybe next time.");
         return;
     }
 
+    let questions = [
+        "What is my job title?",
+        "What is ranked 3rd on my Personal Interest?",
+        "What do I aspire to create change through?",
+        "What is my 2nd ranked Professional Interest?",
+        "Can you guess my favorite number between 15 and 25?"
+    ];
+
     let correctCount = 0;
     let wrongCount = 0;
 
-    let question1 = "What is my job title?";
+    for (let i = 0; i < questions.length - 1; i++) {
+        let userAnswer = prompt(questions[i]);
+        let lowercasedAnswer = userAnswer.toLowerCase();
+        let correctAnswer = getCorrectAnswer(i).toLowerCase();
 
-    let answer1 = prompt(question1);
-
-    let lowercasedAnswer = answer1.toLowerCase();
-
-    let correctAnswer = lowercasedAnswer === "software development engineer";
-    if (correctAnswer) {
-        let confirmation1 = "Awesome " + user +", You got it!!";
-        alert(confirmation1);
-        correctCount++;
-    } else {
-        alert("Better luck on the next one :(" + user + "");
-        wrongCount++;
+        if (lowercasedAnswer === correctAnswer) {
+            let confirmation = "Nice work " + user + ", You got it!!";
+            alert(confirmation);
+            correctCount++;
+        } else {
+            alert("Better luck on the next one :(" + user + "");
+            wrongCount++;
+        }
     }
 
-    let question2 = "What is ranked 3rd on my Personal Interest?";
+    let favoriteNumber = 21;
+    let attempts = 10;
 
-    let answer2 = prompt(question2);
+    for (let i = 0; i < attempts; i++) {
+        let guess = prompt("Can you guess my favorite number between 15 and 25?");
+        let guessedNumber = parseInt(guess);
 
-    let lowercasedAnswer2 = answer2.toLocaleLowerCase();
-
-    let correctAnswer2 = lowercasedAnswer2 === "time with family";
-    if (correctAnswer2) {
-        let confirmation2 = "Nice work " + user +", You got it!!";
-        alert(confirmation2);
-        correctCount++;
-    } else {
-        alert("Better luck on the next one :(" + user + "");
-        wrongCount++;
-    }
-
-    let question3 = "What do I aspire to create change through?";
-
-    let answer3 = prompt(question3);
-
-    let lowercasedAnswer3 = answer3.toLocaleLowerCase();
-
-    let correctAnswer3 = lowercasedAnswer3 === "positivity and growth mindset";
-    if (correctAnswer3) {
-        let confirmation3 = "Nice " + user + ", right again!!";
-        alert(confirmation3);
-        correctCount++;
-    } else {
-        alert("Better luck on the next one :(" + user + "");
-        wrongCount++;
-    }
-
-    let question4 = "What is my 2nd ranked Professional Interest?";
-
-    let answer4 = prompt(question4);
-
-    let lowercasedAnswer4 = answer4.toLocaleLowerCase();
-
-    let correctAnswer4 = lowercasedAnswer4 === "entrepreneurship";
-    if (correctAnswer4) {
-        let confirmation4 = "Sweet " + user + ", Nailed it!!";
-        alert(confirmation4);
-        correctCount++;
-    } else {
-        alert("Better luck on the next one :(" + user + "");
-        wrongCount++;
+        if (!isNaN(guessedNumber) && guessedNumber === favoriteNumber) {
+            alert("Yay, you guessed correctly! The answer is 21. Great job, " + user + "!");
+            correctCount++;
+            break;
+        } else if (i === attempts - 1) {
+            alert("Sorry, you've run out of attempts. The correct answer is 21. Better luck next time, " + user + "!");
+            wrongCount++;
+        } else {
+            alert("Incorrect guess. Try again! Attempts left: " + (attempts - i - 1));
+        }
     }
 
     let finalMessage = "Thanks for playing, " + user + "!\nYou got " + correctCount + " correct and " + wrongCount + " wrong answers.";
     alert(finalMessage);
+}
+
+function getCorrectAnswer(index) {
+    switch (index) {
+        case 0:
+            return "software development engineer";
+        case 1:
+            return "time with family";
+        case 2:
+            return "positivity and growth mindset";
+        case 3:
+            return "entrepreneurship";
+        case 4:
+            return "21";
+        default:
+            return "";
+    }
 }

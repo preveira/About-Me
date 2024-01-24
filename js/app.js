@@ -7,7 +7,10 @@ function buttonGame() {
 
     alert(answerString1);
 
-    let userConfirmed = confirm("Are you ready to play?");
+    let userConfirmed = prompt("Are you ready to play? yes/no");
+
+    let userConfirmedAnswer = userConfirmed.toLocaleLowerCase();
+
 
     if (userConfirmed) {
         let confirmation = "Alright " + user +", here we GO!!!";

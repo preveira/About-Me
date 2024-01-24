@@ -1,3 +1,3 @@
 # About-Me
 
-[lighthouse score](/img/lighthouse-score.png)
+[lighthousescore](/img/lighthouse-score.png)

@@ -1,3 +1,4 @@
+"use strict";
 function buttonGame() {
     let userName = "Thank you for browsing my website! What's your Name?";
     let user = prompt(userName);
@@ -55,7 +56,7 @@ function buttonGame() {
 
         if (i === 4) {
             let favoriteNumber = 21;
-            let remainingTriesNumber = 10;
+            let remainingTriesNumber = 5;
 
             while (remainingTriesNumber > 0) {
                 let userGuessNumber = parseInt(userAnswer);
@@ -71,8 +72,12 @@ function buttonGame() {
                     break;
                 } else {
                     remainingTriesNumber--;
-                    alert("Incorrect! You have " + remainingTriesNumber + " tries left.");
-            
+
+                    if (userGuessNumber > favoriteNumber) {
+                        alert("Incorrect! Too high. You have " + remainingTriesNumber + " tries left.");
+                    } else {
+                        alert("Incorrect! Too low. You have " + remainingTriesNumber + " tries left.");
+                    }
                     if (remainingTriesNumber > 0) {
                         userAnswer = prompt(questions[i]);
                     }

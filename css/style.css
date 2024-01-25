@@ -51,6 +51,7 @@ button {
     box-shadow: none;
     font-weight: bold;
     color: orange;
+    cursor: pointer;
 }
 div {
     margin-left: 10px;

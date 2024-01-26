@@ -91,8 +91,10 @@ function buttonGame() {
                 let userGuessNickname = prompt(
                     questions[i] + "\nAvailable choices: " + answerChoices[i].join(", ")
                 );
+
+                userGuessNickname = userGuessNickname.toLowerCase();
                 
-                if (userGuessNickname.toLowerCase() === correctAnswer) {
+                if (userGuessNickname === correctAnswer.toLowerCase()) {
                     alert("Yay, you guessed correctly!");
                     correctCount++;
                     break;

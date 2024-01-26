@@ -4,8 +4,13 @@ body {
 }
 
 .bio-experience{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px;
+    border: solid black;
+    background: linear-gradient(silver, white);
+    margin-left: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    align-content: center;
 }
 
 h2 {
@@ -14,6 +19,7 @@ h2 {
     margin: 0;
     padding-bottom: 5px;
     font-weight: bold;
+    font-size: 25px;
 }
 h1 {
     font-weight: bold;
@@ -48,7 +54,7 @@ p {
 .name-title {
     display: flex;
 }
-.text-container {
+.name-container {
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -79,4 +85,24 @@ button {
 }
 div {
     margin-left: 10px;
+}
+.div-list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: start;
+    align-self: center;
+    background: linear-gradient(silver, white);
+    margin: 20px;
+    border-radius: 20px;
+    border: solid black;
+    align-content: center;
+}
+.div-list > * {
+    flex-grow: 1;
+    margin: 10px;
+}
+.experience-interest {
+    display: flex;
+    flex-direction: row;
 }

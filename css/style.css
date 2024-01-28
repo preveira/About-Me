@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(rgba(0, 170, 255, .35), silver);
+    background: linear-gradient(rgb(0, 170, 255, 0.5), silver);
     font-family: sans-serif; 
 }
 
@@ -24,9 +24,9 @@ h2 {
 h1 {
     font-weight: bold;
     font-size: 50px;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 ol, ul {
@@ -68,8 +68,11 @@ p {
 footer {
     background-color: black;
     color: white;
-    margin: none;
-    padding: 2px;
+    margin: 0;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 button {
     display: block;
@@ -105,4 +108,23 @@ div {
 .experience-interest {
     display: flex;
     flex-direction: row;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 10px;
 }

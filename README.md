@@ -8,3 +8,5 @@
 
 - Driver: Ahmed Elnogoumi
 - Navigator: Patrick Kawika Reveira
+
+[lighthouse score lab 05b](/img/lighthouse-score05.png)
